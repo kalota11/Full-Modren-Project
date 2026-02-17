@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   ROOT VARIABLES (COLORS & FONTS)
+================================ */
+:root {
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+
+  /* 🎨 MODERN DARK COLOR THEME */
+  --bg-main: #0b1120;        /* main background */
+  --bg-card: #111827;        /* cards / sections */
+  --bg-glass: rgba(255, 255, 255, 0.05);
+
+  --text-main: #e5e7eb;      /* primary text */
+  --text-muted: #9ca3af;     /* muted text */
+
+  --primary: #22d3ee;        /* cyan */
+  --secondary: #a78bfa;      /* violet */
+  --accent: #34d399;         /* green accent */
+
+  color-scheme: dark;
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+* {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sora);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    @apply text-lg;         /* 📈 larger base font size */
+    font-weight: 500;       /* 🔥 slightly bolder */
+    line-height: 1.6;       /* better readability */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;   
+    font-size: 24px;    /* headings bold */
+  }
+
+  p {
+    font-size: 1.125rem;    /* slightly larger paragraph text */
+    font-weight: 500;
+  }
+}
+
+/* ===============================
+   HELPER CLASSES
+================================ */
+.bg-main {
+  background-color: var(--bg-main);
+}
+
+.bg-card {
+  background-color: var(--bg-card);
+}
+
+.bg-glass {
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(12px);
+}
+
+.text-main {
+  color: var(--text-main);
+  font-weight: 500; /* slightly bolder text */
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-primary {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.text-secondary {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.text-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.border-secondary {
+  border-color: var(--secondary);
+}
+
+/* ===============================
+   BUTTON STYLES
+================================ */
+.btn-primary {
+  background-color: var(--primary);
+  color: #020617;
+  @apply px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-300;
+}
+
+.btn-primary:hover {
+  background-color: #06b6d4;
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  @apply px-6 py-3 rounded-xl text-lg font-semibold transition-all duration-300;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #020617;
+}
+
+/* ===============================
+   ROTATIONS (UNCHANGED)
+================================ */
+.rotate-45 { @apply rotate-[45deg] }
+.rotate-90 { @apply rotate-[90deg] }
+.rotate-135 { @apply rotate-[135deg] }
+.rotate-180 { @apply rotate-[180deg] }
+.rotate-225 { @apply rotate-[225deg] }
+.rotate-270 { @apply rotate-[270deg] }
+.rotate-315 { @apply rotate-[315deg] }
+.rotate-360 { @apply rotate-[360deg] }
+
+.-rotate-45 { @apply rotate-[-45deg] }
+.-rotate-90 { @apply rotate-[-90deg] }
+.-rotate-135 { @apply rotate-[-135deg] }
+.-rotate-180 { @apply rotate-[-180deg] }
+.-rotate-225 { @apply rotate-[-225deg] }
+.-rotate-270 { @apply rotate-[-270deg] }
+.-rotate-315 { @apply rotate-[-315deg] }
+.-rotate-360 { @apply rotate-[-360deg] }
+
+/* ===============================
+   SELECTION & SCROLLBAR
+================================ */
+::selection {
+  background-color: var(--primary);
+  color: #020617;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
